@@ -7,25 +7,19 @@ on:
   workflow_dispatch:
   
 jobs:
-  # This workflow contains a single job called "build"
+  # Este workflow contém um único job chamado "cypress"
   cypress:
-    # The type of runner that the job will run on
+    # O tipo de runner que o job irá rodar
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    # Steps representam uma sequência de tarefas que serão executadas como parte do job
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: '18'
-      - name: Cypress run
+      - name: Executar Cypress
         uses: cypress-io/github-action@v2
         continue-on-error: true
         with:
-          install-command: npm install
-          browser: chrome
-      - name: Publish Report
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./mochawesome-report
+         
