@@ -7,12 +7,12 @@ on:
   workflow_dispatch:
   
 jobs:
-  # Este workflow contém um único job chamado "cypress"
+
   cypress:
-    # O tipo de runner que o job irá rodar
+
     runs-on: ubuntu-latest
 
-    # Steps representam uma sequência de tarefas que serão executadas como parte do job
+ 
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
